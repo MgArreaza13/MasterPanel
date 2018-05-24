@@ -1,7 +1,7 @@
 {% extends "../Base/Base.html" %}
 {% load staticfiles %}
 {% block Title %}
-	Listado De Ingresos
+	Listado De Egresos
 {% endblock Title %}
 
 {% block stayle %}
@@ -37,14 +37,14 @@
             <!-- END SIDEBAR -->
             <!-- BEGIN CONTENT -->
             <div class="page-content-wrapper">
-            	{% if ingresos %}
+            	{% if egresos %}
 		                <!-- BEGIN CONTENT BODY -->
 		                <div class="page-content">
 		                    <!-- BEGIN PAGE HEADER-->
 		                    <!-- BEGIN THEME PANEL -->
 		                   
 		                    <!-- END THEME PANEL -->
-		                    <h1 class="page-title"> Listados De Ingresos 
+		                    <h1 class="page-title"> Listados De Egresos 
 		                        
 		                    </h1>
 		                    <div class="page-bar">
@@ -55,7 +55,7 @@
 		                                <i class="fa fa-angle-right"></i>
 		                            </li>
 		                            <li>
-		                                <a href="#">Ingresos</a>
+		                                <a href="#">Egresos</a>
 		                                <i class="fa fa-angle-right"></i>
 		                            </li>
 		                            <li>
@@ -82,12 +82,10 @@
 		                                        <thead>
 		                                            <tr>
 		                                                <th>Usuario</th>
-		                                                <th>Cliente</th>
-		                                                <th>Proyecto</th>
+		                                                
 		                                                <th>Monto</th>
+		                                                <th>Tipo De Egreso</th>
 		                                                <th>Descripcion</th>
-		                                                <th>Forma de Pago</th>
-		                                                <th>Tipo de Ingreso</th>
 		                                                <th>Fecha de Registro</th>
 		                                            </tr>
 		                                        </thead>
@@ -95,16 +93,15 @@
 		                                            
 		                                        </tfoot>
 		                                        <tbody>
-		                                        	{% for ingreso in ingresos  %}
+		                                        	{% for egresos in egresos  %}
 			                                        	<tr>
-			                                                <td>{{ingreso.user}}</td>
-			                                                <td>{{ingreso.cliente}}</td>
-			                                                <td>{{ingreso.cliente.Project}}</td>
-			                                                <td><span class="label label-success"> ${{ingreso.monto}} </span></td>
-			                                                <td>{{ingreso.descripcion}}</td>
-			                                                <td>{{ingreso.formaDePago}}</td>
-			                                                <td>{{ingreso.tipoIngreso}}</td>
-			                                                <td>{{ingreso.dateCreate}}</td>
+			                                                <td>{{egresos.user}}</td>
+			                                                
+			                                                <td><span class="label label-danger"> ${{egresos.monto}} </span></td>
+			                                                <td>{{egresos.tipoDeEgreso}}</td>
+			                                                <td>{{egresos.descripcion}}</td>
+			                                                <td>{{egresos.dateCreate}}</td>
+			                                              
 			                                            </tr>
 		                                        	{% endfor %}
 		                                        </tbody>
@@ -115,6 +112,7 @@
 		                           
 		                        </div>
 		                    </div>
+		                    <a href=""  class="btn btn-danger btn-block">Registrar Egreso</a>
 		                </div>
 		                <!-- END CONTENT BODY -->
 	            	{% else %}
@@ -122,7 +120,7 @@
 		                <div class="page-content">
 		                    <!-- BEGIN PAGE HEADER-->
 		                    
-		                    <h1 class="page-title"> Listados De Ingresos 
+		                    <h1 class="page-title"> Listados De Egresos 
 		                        
 		                    </h1>
 		                    <div class="page-bar">
@@ -133,7 +131,7 @@
 		                                <i class="fa fa-angle-right"></i>
 		                            </li>
 		                            <li>
-		                                <a href="#">Ingresos</a>
+		                                <a href="#">Egresos</a>
 		                                <i class="fa fa-angle-right"></i>
 		                            </li>
 		                            <li>

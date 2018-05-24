@@ -23,7 +23,7 @@ urlpatterns = [
 	url(r'^', include('apps.Panel.urls', namespace='Panel')),
     url(r'^admin/', admin.site.urls),
     url(r'^Caja/', include('apps.Caja.urls', namespace='Caja')),
-    url(r'^Clientes', include('apps.Clientes.urls', namespace='Clientes')),
+    url(r'^Clientes/', include('apps.Clientes.urls', namespace='Clientes')),
     url(r'^Configuracion', include('apps.Configuracion.urls', namespace='Configuracion')),
     url(r'^Proyectos', include('apps.Proyectos.urls', namespace='Proyectos')),
 ]

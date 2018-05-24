@@ -1,5 +1,6 @@
 ##################MODELOS#################
 from apps.Caja.models import tb_ingresos
+from apps.Caja.models import tb_egreso
 from apps.UserProfile.models import tb_profile
 from datetime import date 
 from django.db.models import Count, Min, Sum, Avg
@@ -11,7 +12,13 @@ def ResumenCaja(request):
 	# ingresos mensual 
 	totalIngrsos_mensual = tb_ingresos.objects.filter(dateCreate__month = date.today().month).aggregate(total_mensual=Sum('monto'))
 
-	return {'totalIngresos':TotalIngresos, 'totalIngrsos_mensual':totalIngrsos_mensual }
+	#total Egresos 
+
+	TotalEgresos = tb_egreso.objects.all().aggregate(total=Sum('monto'))
+	totalEgresos_mensual = tb_egreso.objects.filter(dateCreate__month = date.today().month).aggregate(total_mensual=Sum('monto'))
+
+
+	return {'totalIngresos':TotalIngresos, 'totalIngrsos_mensual':totalIngrsos_mensual, 'TotalEgresos':TotalEgresos, 'totalEgresos_mensual':totalEgresos_mensual }
 
 
 
