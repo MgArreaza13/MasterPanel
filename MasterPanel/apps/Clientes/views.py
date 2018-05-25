@@ -27,13 +27,6 @@ def NewClient(request):
 			Form.save()
 			return redirect('Clientes:ListadoClientes')
 			print('ESTA GUARDADO')
-
-
-
-
-
-
-
 	contexto = {
 		'Form' : Form
 	}

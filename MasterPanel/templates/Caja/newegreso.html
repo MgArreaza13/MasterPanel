@@ -1,7 +1,7 @@
 {% extends "../Base/Base.html" %}
 {% load staticfiles %}
 {% block Title %}
-	Musculando | Nuevo Socio
+	Musculando | Egresos
 {% endblock Title %}
 
 
@@ -117,7 +117,7 @@
                                                 <!-- END FORM-->
                                             </div>
                                         </div>
-                                        <a href=""  class="btn btn-danger btn-block">Regresar</a>
+                                        <a href="{% url "Caja:EgresoList" %}"  class="btn btn-danger btn-block">Regresar</a>
                 </div>
                 <!-- END CONTENT BODY -->
             </div>

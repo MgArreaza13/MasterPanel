@@ -91,6 +91,7 @@ class ClientRegisterForm(forms.ModelForm):
 			  'required':'False',
 			  'disabled':False,
 			  'autocomplete':'off',
+			  'type':'date',
 			   'placeholder':'Fecha de Cobro Mensual'}),
 
 		'urlProject': URLInput(attrs={'class':'form-control', 
@@ -105,10 +106,11 @@ class ClientRegisterForm(forms.ModelForm):
 			  'autocomplete':'off',
 			   'placeholder':'Project'}),
 
-		'DateInicioContrato': TextInput(attrs={'class':'form-control', 
+		'DateInicioContrato': DateInput(attrs={'class':'form-control', 
 			  'required':'False',
 			  'disabled':False,
 			  'autocomplete':'off',
+			  'type':'date',
 			   'placeholder':'Fecha de Inicio de Contrato'}),
 
 		'VendedorAsignado': TextInput(attrs={'class':'form-control', 

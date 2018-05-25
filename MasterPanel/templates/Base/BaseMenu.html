@@ -32,12 +32,12 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item  ">
-                                    <a href="" class="nav-link ">
+                                    <a href="{% url "Caja:IngresoList" %}" class="nav-link ">
                                         <span class="title">INGRESOS</span>
                                     </a>
                                 </li>
                                 <li class="nav-item  ">
-                                    <a href="" class="nav-link ">
+                                    <a href="{% url "Caja:EgresoList" %}" class="nav-link ">
                                         <span class="title">EGRESOS</span>
                                     </a>
                                 </li>
@@ -54,8 +54,8 @@
                             </a>
                             <ul class="sub-menu">
                                 <li class="nav-item  ">
-                                    <a href="" class="nav-link ">
-                                        <span class="title">Listado De Clases </span>
+                                    <a href="{% url "Clientes:ListadoClientes" %}" class="nav-link ">
+                                        <span class="title">Listado De Clientes </span>
                                     </a>
                                 </li>
                                 <!--
@@ -70,19 +70,12 @@
                         
                         
                         <li class="nav-item  ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+                            <a href="{% url "Configuracion:Configuracion_General" %}" class="nav-link nav-toggle">
                                 <i class="fa fa-wrench"></i>
                                 <span class="title">CONFIGURACION</span>
                                 <span class="arrow"></span>
                             </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item  ">
-                                    <a href="" class="nav-link ">
-                                        <span class="title">Planes</span>
-                                    </a>
-                                </li>
-                                
-                            </ul>
+                            
                         </li>
                         <li class="nav-item start  ">
                             <a href="javascript:;" class="nav-link nav-toggle">
