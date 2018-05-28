@@ -79,12 +79,27 @@
                         </li>
                         
                         <li class="nav-item  ">
-                            <a href="{% url "Proyectos:ListProyect" %}" class="nav-link nav-toggle">
+                            <a href="#" class="nav-link nav-toggle">
                                 <i class="fa fa-building"></i>
                                 <span class="title">PROYECTOS</span>
                                 <span class="arrow"></span>
                             </a>
-                            
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="{% url "Proyectos:NewProject" %}" class="nav-link ">
+                                        <i class="fa fa-plus-circle"></i>
+                                        <span class="title">Nuevo Proyecto</span>
+                                    </a>
+                                </li>
+
+                                    <li class="nav-item  ">
+                                    <a href="{% url "Proyectos:ListProyect" %}" class="nav-link ">
+                                        <i class="fa fa-tasks"></i>
+                                        <span class="title">Listado De Proyectos</span>
+                                    </a>
+                                </li>
+                            </ul>    
+
                         </li>
                         <li class="nav-item  ">
                             <a href="{% url "Configuracion:Configuracion_General" %}" class="nav-link nav-toggle">
