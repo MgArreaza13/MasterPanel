@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 from apps.Clientes.models import tb_cliente
 from django.shortcuts import redirect
 
@@ -31,3 +32,32 @@ def NewClient(request):
 		'Form' : Form
 	}
 	return render(request, 'Clientes/NewClient.html', contexto)
+
+
+def DeleteCliente(request):
+	status  = 200
+	id_client = request.GET.get('id', None)
+	cliente = tb_cliente.objects.get(id = id_client)
+	cliente.delete()
+	return HttpResponse(status)
+
+
+
+def UpdateClient(request , id_client):
+	#Form = ClientRegisterForm()
+	client = tb_cliente.objects.get(id = id_client)
+	if request.method == 'GET':
+		Form = ClientRegisterForm(instance = client)
+	else:
+		Form = ClientRegisterForm(request.POST , request.FILES  ,  instance = client)
+		if Form.is_valid():
+			cliente = Form.save(commit = False)
+			cliente.user = request.user
+			cliente.save()
+			return redirect('Clientes:ListadoClientes')
+		else:
+			Form = ClientRegisterForm(equest.POST , request.FILES  ,  instance = client)
+			print('formulario con errores')
+	return render(request, 'Clientes/NewClient.html', {'Form':Form})
+
+	

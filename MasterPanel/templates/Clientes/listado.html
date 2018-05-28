@@ -241,9 +241,9 @@
                                                     {{socio.VendedorAsignado}}
                                                 </td>
                                                 <td style="text-align:center">
-                                                        <button type="button" value="{{formas_de_pago.id}}" onclick="EditarFormaDePago(this.value);" class="btn btn-outline btn-circle btn-sm purple">
-                                                            <i class="fa fa-edit"></i> Editar </button>
-                                                        <button type="button" value="{{formas_de_pago.id}}" onclick="EliminarFormaDePago(this.value);" class="btn btn-outline btn-circle dark btn-sm black">
+                                                        <a type="button"  href="{% url "Clientes:UpdateClient" socio.id %}" class="btn btn-outline btn-circle btn-sm purple">
+                                                            <i class="fa fa-edit"></i> Editar </a>
+                                                        <button type="button" value="{{socio.id}}" onclick="EliminarCliente(this.value);" class="btn btn-outline btn-circle dark btn-sm black">
                                                             <i class="fa fa-trash-o"></i> Borrar </button>
                                                     </td>
                                             </tr>
@@ -274,4 +274,8 @@
             <!-- END THEME GLOBAL SCRIPTS -->
             <!-- BEGIN PAGE LEVEL SCRIPTS -->
             <script src="{% static "assets/pages/scripts/table-datatables-managed.min.js" %}" type="text/javascript"></script>
+            <script src="{% static "assets/apps/scripts/clientes.js" %}" type="text/javascript"></script>
+
+
+
 {% endblock Scripts %}

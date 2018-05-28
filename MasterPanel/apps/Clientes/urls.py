@@ -2,6 +2,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from apps.Clientes.views import ListadoClientes
 from apps.Clientes.views import NewClient
+from apps.Clientes.views import DeleteCliente
+from apps.Clientes.views import UpdateClient
 #from apps.Panel.views import Inicio
 #from apps.Panel.views import Login
 #from apps.Panel.views import ComingSoon
@@ -11,7 +13,8 @@ from apps.Clientes.views import NewClient
 urlpatterns = [
 	url(r'^$', ListadoClientes, name='ListadoClientes' ),
 	url(r'^Nuevo/$', NewClient, name='NewClient' ),
-	#url(r'^Viene/Pronto$', ComingSoon, name='ComingSoon' ),
+	url(r'^Solicitud/De/Borrar/Cliente/$', DeleteCliente, name='DeleteCliente' ),
+	url(r'^Editar/(?P<id_client>\d+)$', UpdateClient, name='UpdateClient'  ),
 	#url(r'^Salir/$', Logout, name='Logout' ),
 	#url(r'^calendario/$', calendario, name='calendario' ),
 	#url(r'^ingresosegresos/$', ingresosegresos, name='ingresoegresos' ),
