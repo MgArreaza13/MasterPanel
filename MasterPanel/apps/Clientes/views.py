@@ -60,4 +60,7 @@ def UpdateClient(request , id_client):
 			print('formulario con errores')
 	return render(request, 'Clientes/NewClient.html', {'Form':Form})
 
+def DetallesClient(request):
+	
+	return render(request, 'Clientes/Detalles.html')
 	

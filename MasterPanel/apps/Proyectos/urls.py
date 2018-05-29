@@ -2,6 +2,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from apps.Proyectos.views import ListProyect
 from apps.Proyectos.views import NewProject
+from apps.Proyectos.views import DetallesProject
 #from apps.Panel.views import Login
 #from apps.Panel.views import ComingSoon
 #from apps.Panel.views import Logout
@@ -10,6 +11,7 @@ from apps.Proyectos.views import NewProject
 urlpatterns = [
 	url(r'^$', ListProyect, name='ListProyect' ),
 	url(r'^Nuevo/$', NewProject, name='NewProject' ),
+	url(r'^Detalles', DetallesProject, name='DetallesProject' ),
 	#url(r'^Viene/Pronto$', ComingSoon, name='ComingSoon' ),
 	#url(r'^Salir/$', Logout, name='Logout' ),
 	#url(r'^calendario/$', calendario, name='calendario' ),

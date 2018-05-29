@@ -4,6 +4,7 @@ from apps.Clientes.views import ListadoClientes
 from apps.Clientes.views import NewClient
 from apps.Clientes.views import DeleteCliente
 from apps.Clientes.views import UpdateClient
+from apps.Clientes.views import DetallesClient
 #from apps.Panel.views import Inicio
 #from apps.Panel.views import Login
 #from apps.Panel.views import ComingSoon
@@ -15,6 +16,7 @@ urlpatterns = [
 	url(r'^Nuevo/$', NewClient, name='NewClient' ),
 	url(r'^Solicitud/De/Borrar/Cliente/$', DeleteCliente, name='DeleteCliente' ),
 	url(r'^Editar/(?P<id_client>\d+)$', UpdateClient, name='UpdateClient'  ),
+	url(r'^Detalles', DetallesClient, name='DetallesClient' ),
 	#url(r'^Salir/$', Logout, name='Logout' ),
 	#url(r'^calendario/$', calendario, name='calendario' ),
 	#url(r'^ingresosegresos/$', ingresosegresos, name='ingresoegresos' ),

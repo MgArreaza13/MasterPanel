@@ -31,3 +31,7 @@ def NewProject(request):
 		'Form': Form
 	}
 	return render (request, 'Proyectos/NewProject.html', contexto)
+
+def DetallesProject(request):
+	
+	return render(request, 'Proyectos/Detalles.html')

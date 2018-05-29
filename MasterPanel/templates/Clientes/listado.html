@@ -3,11 +3,11 @@
 
 
 {% block Title %}
-	Lista de Clientes
+    Lista de Clientes
 {% endblock Title %}
 
 {% block stayle %}
-	 <link href="{% static "assets/global/plugins/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css" />
+     <link href="{% static "assets/global/plugins/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css" />
         <link href="{% static "assets/global/plugins/simple-line-icons/simple-line-icons.min.css" %}" rel="stylesheet" type="text/css" />
         <link href="{% static "assets/global/plugins/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css" />
         <link href="{% static "assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" %}" rel="stylesheet" type="text/css" />
@@ -27,7 +27,7 @@
 {% endblock stayle %}
 
 {% block Content %}
-	<div class="page-content-wrapper">
+    <div class="page-content-wrapper">
                 <!-- BEGIN CONTENT BODY -->
                 <div class="page-content">
                     <!-- BEGIN PAGE HEADER-->
@@ -188,19 +188,19 @@
                                                     </label>
                                                 </th>
                                                  <th>Empresa</th>
-		                                                <th>Razon Social</th>
-		                                                <th>Cuit</th>
-		                                                <th>Mail</th>
-		                                                <th>Telefono</th>
-		                                                <th>Nacionalidad</th>
-		                                                <th>Encargado</th>
-		                                                <th>Monto Mensual</th>
-		                                                <th>Fecha de Cobro</th>
-		                                                <th>Url</th>
-		                                                <th>Sistema</th>
-		                                                <th>Fecha Instalacion</th>
-		                                                <th>Vendedor Asignado</th>
-		                                                <th>Acciones</th>
+                                                        <th>Razon Social</th>
+                                                        <th>Cuit</th>
+                                                        <th>Mail</th>
+                                                        <th>Telefono</th>
+                                                        <th>Nacionalidad</th>
+                                                        <th>Encargado</th>
+                                                        <th>Monto Mensual</th>
+                                                        <th>Fecha de Cobro</th>
+                                                        <th>Url</th>
+                                                        <th>Sistema</th>
+                                                        <th>Fecha Instalacion</th>
+                                                        <th>Vendedor Asignado</th>
+                                                        <th>Acciones</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -217,7 +217,8 @@
                                                         <span></span>
                                                     </label>
                                                 </td>
-                                                <td> {{socio.nameEmpresa}} </td>
+                                                <td>
+                                                    <a href="{% url "Clientes:DetallesClient"%}"> {{socio.nameEmpresa}} </td>
                                                 <td>
                                                     {{socio.RazonSociol}}
                                                 </td>
@@ -249,8 +250,8 @@
                                             </tr>
                                         {% endfor %}
                                             
-			                                        	
-		                                        	
+                                                        
+                                                    
                                             
                                         </tbody>
                                     </table>
@@ -265,7 +266,7 @@
 {% endblock Content %}
 
 {% block Scripts %}
-			<script src="{% static "assets/global/scripts/datatable.js" %}" type="text/javascript"></script>
+            <script src="{% static "assets/global/scripts/datatable.js" %}" type="text/javascript"></script>
             <script src="{% static "assets/global/plugins/datatables/datatables.min.js" %}" type="text/javascript"></script>
             <script src="{% static "assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" %}" type="text/javascript"></script>
             <!-- END PAGE LEVEL PLUGINS -->
