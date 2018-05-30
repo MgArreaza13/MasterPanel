@@ -3,11 +3,11 @@
 
 
 {% block Title %}
-    Lista de Clientes
+  Lista de Usuarios
 {% endblock Title %}
 
 {% block stayle %}
-     <link href="{% static "assets/global/plugins/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css" />
+   <link href="{% static "assets/global/plugins/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css" />
         <link href="{% static "assets/global/plugins/simple-line-icons/simple-line-icons.min.css" %}" rel="stylesheet" type="text/css" />
         <link href="{% static "assets/global/plugins/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css" />
         <link href="{% static "assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" %}" rel="stylesheet" type="text/css" />
@@ -27,7 +27,7 @@
 {% endblock stayle %}
 
 {% block Content %}
-    <div class="page-content-wrapper">
+  <div class="page-content-wrapper">
                 <!-- BEGIN CONTENT BODY -->
                 <div class="page-content">
                     <!-- BEGIN PAGE HEADER-->
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                     <!-- END THEME PANEL -->
-                    <h1 class="page-title">Lista de Clientes 
+                    <h1 class="page-title">Lista de Programadores  
                         <small>master Panel</small>
                     </h1>
                     <div class="page-bar">
@@ -120,7 +120,7 @@
                                 <i class="fa fa-angle-right"></i>
                             </li>
                             <li>
-                                <a href="#">Clientes</a>
+                                <a href="#">Programadores</a>
                                 <i class="fa fa-angle-right"></i>
                             </li>
                             <li>
@@ -163,7 +163,7 @@
                                 <div class="portlet-title">
                                     <div class="caption">
                                         
-                                        <span class="caption-subject font-red sbold uppercase">Lista de Clientes</span>
+                                        <span class="caption-subject font-red sbold uppercase">Lista de Programadores</span>
                                     </div>
                                     <div class="actions">
                                         <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
@@ -187,20 +187,14 @@
                                                         <span></span>
                                                     </label>
                                                 </th>
-                                                 <th>Empresa</th>
-                                                        <th>Razon Social</th>
-                                                        <th>Cuit</th>
-                                                        <th>Mail</th>
-                                                        <th>Telefono</th>
-                                                        <th>Nacionalidad</th>
-                                                        <th>Encargado</th>
-                                                        <th>Monto Mensual</th>
-                                                        <th>Fecha de Cobro</th>
-                                                        <th>Url</th>
-                                                        <th>Sistema</th>
-                                                        <th>Fecha Instalacion</th>
-                                                        <th>Vendedor Asignado</th>
-                                                        <th>Acciones</th>
+                                                 <th>Usuario</th>
+                                                    <th>Apellido</th>
+                                                    <th>Email</th>
+                                                    <th>Monto Mensualidad</th>
+                                                    <th>Monto Acumulado</th>
+                                                
+                                                    
+                                                    
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -209,7 +203,7 @@
                                             </tr>
                                         </tfoot>
                                         <tbody>
-                                        {% for socio in clientes  %}
+                                        {% for Programador in ListaDeProgramadores  %}
                                             <tr class="odd gradeX">
                                                 <td>
                                                     <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
@@ -217,56 +211,40 @@
                                                         <span></span>
                                                     </label>
                                                 </td>
+                                                <td> {{Programador.nameUser}} </td>
                                                 <td>
-                                                    <a href="{% url "Clientes:DetallesClient" socio.id%}"> {{socio.nameEmpresa}} </td>
-                                                <td>
-                                                    {{socio.RazonSociol}}
+                                                    {{Programador.lastName}}
                                                 </td>
-                                                <td> {{socio.Cuit}} </td>
-                                                <td>  {{socio.mailEmpresa}} </td>
+                                                <td> {{Programador.mailUser}} </td>
+                                                <td>  {{Programador.montoMensualidad}} $</td>
                                                 <td>
-                                                   {{socio.TelefonoContacto}}
+                                                   {{Programador.montoAcumulado}} $
                                                 </td>
-                                                <td> {{socio.Nacionalidad}} </td>
-                                                <td> {{socio.namePersonaEncargada}} </td>
-                                                <td>
-                                                    ${{socio.montoMensualidad}}
-                                                </td>
-                                                <td> {{socio.FechaCobroMensual}} </td>
-                                                <td>
-                                                    <a href="{{socio.urlProject}} "> {{socio.urlProject}}  </a>
-                                                </td>
-                                                <td> {{socio.Project}} </td>
-                                                <td> {{socio.DateInicioContrato}}</td>
-                                                <td>
-                                                    {{socio.VendedorAsignado}}
-                                                </td>
+                                               
+                                                  
+                                                
                                                 <td style="text-align:center">
-                                                        <a type="button"  href="{% url "Clientes:UpdateClient" socio.id %}" class="btn btn-outline btn-circle btn-sm purple">
-                                                            <i class="fa fa-edit"></i> Editar </a>
-                                                        <button type="button" value="{{socio.id}}" onclick="EliminarCliente(this.value);" class="btn btn-outline btn-circle dark btn-sm black">
+                                                        <button type="button" value="{{formas_de_pago.id}}" onclick="EditarFormaDePago(this.value);" class="btn btn-outline btn-circle btn-sm purple">
+                                                            <i class="fa fa-edit"></i> Editar </button>
+                                                        <button type="button" value="{{formas_de_pago.id}}" onclick="EliminarFormaDePago(this.value);" class="btn btn-outline btn-circle dark btn-sm black">
                                                             <i class="fa fa-trash-o"></i> Borrar </button>
                                                     </td>
                                             </tr>
                                         {% endfor %}
                                             
-                                                        
-                                                    
+                                                
+                                        
                                             
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+                            </div></div>
                             <!-- END EXAMPLE TABLE PORTLET-->
-                        </div>
-                    <a href="{% url "Clientes:NewClient" %}"  class="btn btn-success btn-block">Registrar Clientes</a>
-                </div>
-                <!-- END CONTENT BODY -->
-            </div>
 {% endblock Content %}
 
 {% block Scripts %}
-            <script src="{% static "assets/global/scripts/datatable.js" %}" type="text/javascript"></script>
+      <script src="{% static "assets/global/scripts/datatable.js" %}" type="text/javascript"></script>
             <script src="{% static "assets/global/plugins/datatables/datatables.min.js" %}" type="text/javascript"></script>
             <script src="{% static "assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" %}" type="text/javascript"></script>
             <!-- END PAGE LEVEL PLUGINS -->
@@ -275,8 +253,4 @@
             <!-- END THEME GLOBAL SCRIPTS -->
             <!-- BEGIN PAGE LEVEL SCRIPTS -->
             <script src="{% static "assets/pages/scripts/table-datatables-managed.min.js" %}" type="text/javascript"></script>
-            <script src="{% static "assets/apps/scripts/clientes.js" %}" type="text/javascript"></script>
-
-
-
 {% endblock Scripts %}

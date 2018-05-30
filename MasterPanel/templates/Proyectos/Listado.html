@@ -180,10 +180,11 @@
 	                                    <div class="cbp-caption-activeWrap">
 	                                        <div class="cbp-l-caption-alignCenter">
 	                                            <div class="cbp-l-caption-body">
-	                                                <a href="{% url "Proyectos:DetallesProject"%}" class="btn red uppercase btn red uppercase" rel="nofollow">more info</a>
+	                                                <a href="{% url "Proyectos:DetallesProject" proyecto.id %}" class="btn red uppercase btn red uppercase" rel="nofollow">more info</a>
 	                                               
-                                                    <a href="{% url "Proyectos:DetallesProject"%}" class="btn red uppercase btn red uppercase" rel="nofollow">Editar</a>
-                                                    <a href="{% url "Proyectos:DetallesProject"%}" class="btn red uppercase btn red uppercase" rel="nofollow">Eliminar</a>
+                                                    <a type="button" href="{% url "Proyectos:UpdateProject" proyecto.id %}" class="btn red uppercase btn red uppercase" rel="nofollow">Editar</a>
+                                                    
+                                                    <button type="button" value="{{proyecto.id}}" onclick="EliminarProject(this.value);" class="btn red uppercase btn red uppercase" rel="nofollow">Eliminar</button>
 	                                            </div>
 	                                        </div>
 	                                    </div>
@@ -246,4 +247,5 @@
             <!-- END THEME GLOBAL SCRIPTS -->
             <!-- BEGIN PAGE LEVEL SCRIPTS -->
             <script src="{% static "assets/pages/scripts/portfolio-1.min.js" %}" type="text/javascript"></script>
+            <script src="{% static "assets/apps/scripts/proyectos.js" %}" type="text/javascript"></script>
 {% endblock Scripts %}

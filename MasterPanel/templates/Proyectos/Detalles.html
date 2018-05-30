@@ -109,8 +109,9 @@
                         </div>
                     </div>
                     <!-- END THEME PANEL -->
-                    <h1 class="page-title"> Detalles del Proyecto
+                    <h1 class="page-title"> Detalles del Proyecto 
                         <small>Lista</small>
+                    
                     </h1>
                     <div class="page-bar">
                         <ul class="page-breadcrumb">
@@ -180,7 +181,7 @@
                                         <div class="col-md-3">
                                             <ul class="list-unstyled profile-nav">
                                                 <li>
-                                                    <img src="../media/{{ Proyectos.logo }}"  class="img-responsive pic-bordered" alt="{{ userprofile.user.username }}">
+                                                    <img src="http://localhost:8000/media/{{ proyecto.logo }}"  class="img-responsive pic-bordered" alt="{{ userprofile.user.username }}">
                                                  </li>
                                               
                                             </ul>
@@ -189,9 +190,11 @@
                                         <div class="col-md-9">
                                             <div class="row">
                                                 <div class="col-md-8 profile-info">
-                                                    <h1 class="font-green sbold uppercase">Nombre del Proyecto</h1>
+                                                    <h1 style="margin-top: -8px" class="font-green sbold uppercase">{{proyecto.nameProyecto}}</h1>
                                                                                                        
                                                 </div>
+
+
                                                 <!--end col-md-8-->
                                                 
                                                 <!--end col-md-4-->
@@ -207,9 +210,9 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td>
-                                                                            Developer
+                                                                            Programador
                                                                         </td>
-                                                                        <td class="hidden-xs"> Server hardware purchase </td>
+                                                                        <td class="hidden-xs">{{proyecto.developer}}</td>
                                                                         
                                                                         
                                                                     </tr>
@@ -217,7 +220,7 @@
                                                                         <td>
                                                                             Fecha de Creacion
                                                                         </td>
-                                                                        <td class="hidden-xs"> Office furniture purchase </td>
+                                                                        <td class="hidden-xs">{{proyecto.dateCreate}}</td>
                                                                         
                                                                         
                                                                     </tr>
@@ -225,7 +228,7 @@
                                                                         <td>
                                                                             Fecha de Inicio
                                                                         </td>
-                                                                        <td class="hidden-xs"> Company Anual Dinner Catering </td>
+                                                                        <td class="hidden-xs">{{proyecto.dateInicio}}</td>
                                                                         
                                                                         
                                                                                                                                           
@@ -240,8 +243,9 @@
                     </div>
                 </div>
                 <!-- END CONTENT BODY -->
-                    
+                  <div style="margin-top: 4em"><a href="{% url "Proyectos:ListProyect" %}"  class="btn btn-danger btn-block">Regresar</a></div>  
             </div>
+             
 {% endblock Content %}
             
 {% block Scripts %}

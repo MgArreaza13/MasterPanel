@@ -35,6 +35,7 @@ class RegisterProject(forms.ModelForm):
 			  'required':'False',
 			  'disabled':False,
 			  'autocomplete':'off',
+			  'type':'date',
 			  'placeholder':'Fecha de Inicio'}),
 
 		'developer': Select(attrs={'class':'form-control', 
@@ -43,7 +44,7 @@ class RegisterProject(forms.ModelForm):
 			  'autocomplete':'off',
 			  'placeholder':'Developer'}),
 
-		'logo': FileInput(attrs={'class':'form-control', 
+		'logo': FileInput(attrs={ 
 			  'required':'False',
 			  'disabled':False,
 			  'autocomplete':'off',

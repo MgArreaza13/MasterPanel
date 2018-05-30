@@ -180,7 +180,7 @@
                                         <div class="col-md-3">
                                             <ul class="list-unstyled profile-nav">
                                                 <li>
-                                                    <img src="../assets/pages/media/profile/people19.png" class="img-responsive pic-bordered" alt="">
+                                                    <img src="http://localhost:8000/media/{{ client.Project.logo }}" class="img-responsive pic-bordered" alt="">
                                                  </li>
                                                 
                                                 
@@ -192,17 +192,17 @@
                                         <div class="col-md-9">
                                             <div class="row">
                                                 <div class="col-md-8 profile-info">
-                                                    <h1 class="font-green sbold uppercase">Nombre de la Empresa</h1>
+                                                    <h1 style="margin-top: -8px" class="font-green sbold uppercase">{{client.nameEmpresa}}</h1>
                                                         
-                                                        <a href="javascript:;"> www.UrldelProject.com </a>
-                                                    </p>
+                                                        <a href="{{client.urlProject}}">{{client.urlProject}}</a>
+                                                    
                                                     <ul class="list-inline">
                                                         <li>
-                                                            <i class="fa fa-map-marker"></i> Nacionalidad </li>
+                                                            <i class="fa fa-map-marker"></i> {{client.Nacionalidad}}</li>
                                                         <li>
-                                                            <i class="fa fa-calendar"></i> Fecha de Inicio de Contrato </li>
+                                                            <i class="fa fa-calendar"></i> {{client.DateInicioContrato}}</li>
                                                         <li>
-                                                            <i class="fa fa-envelope-o"></i> Email de la Empresa</li>
+                                                            <i class="fa fa-envelope-o"></i> {{client.mailEmpresa}}</li>
                                                         
                                                     </ul>
                                                 </div>
@@ -223,7 +223,7 @@
                                                                         <td>
                                                                             Razon Social
                                                                         </td>
-                                                                        <td class="hidden-xs"> Server hardware purchase </td>
+                                                                        <td class="hidden-xs"> {{client.RazonSociol}}</td>
                                                                         
                                                                         
                                                                     </tr>
@@ -231,7 +231,7 @@
                                                                         <td>
                                                                             CUIT
                                                                         </td>
-                                                                        <td class="hidden-xs"> Office furniture purchase </td>
+                                                                        <td class="hidden-xs"> {{client.Cuit}}</td>
                                                                         
                                                                         
                                                                     </tr>
@@ -239,7 +239,7 @@
                                                                         <td>
                                                                             Telefonos de Contacto
                                                                         </td>
-                                                                        <td class="hidden-xs"> Company Anual Dinner Catering </td>
+                                                                        <td class="hidden-xs">{{client.TelefonoContacto}} </td>
                                                                         
                                                                         
                                                                     </tr>
@@ -247,7 +247,7 @@
                                                                         <td>
                                                                             Persona Encargada
                                                                         </td>
-                                                                        <td class="hidden-xs"> Payment for Jan 2013 </td>
+                                                                        <td class="hidden-xs"> {{client.namePersonaEncargada}} </td>
                                                                         
                                                                         
                                                                     </tr>
@@ -255,7 +255,7 @@
                                                                         <td>
                                                                             Monto Mensualidad
                                                                         </td>
-                                                                        <td class="hidden-xs"> Server hardware purchase </td>
+                                                                        <td class="hidden-xs"> {{client.montoMensualidad}}$</td>
                                                                        
                                                                        
                                                                     </tr>
@@ -263,7 +263,7 @@
                                                                         <td>
                                                                             Fecha de Cobro Mensual
                                                                         </td>
-                                                                        <td class="hidden-xs"> Office furniture purchase </td>
+                                                                        <td class="hidden-xs"> {{client.FechaCobroMensual}} </td>
                                                                         
                                                                        
                                                                     </tr>
@@ -271,7 +271,7 @@
                                                                         <td>
                                                                             Vendedor Asignado
                                                                         </td>
-                                                                        <td class="hidden-xs"> Company Anual Dinner Catering </td>
+                                                                        <td class="hidden-xs"> {{client.VendedorAsignado}} </td>
                                                                       
                                                                     </tr>
                                                                 </tbody>
@@ -282,10 +282,15 @@
                         </div>
                         
                     </div>
+
                 </div>
+               <div style="margin-top: 4em">
+               <a href="{% url "Clientes:ListadoClientes" %}"  class="btn btn-danger btn-block">Regresar</a>  
+               </div> 
                 <!-- END CONTENT BODY -->
-                    
             </div>
+
+
 {% endblock Content %}
             
 {% block Scripts %}

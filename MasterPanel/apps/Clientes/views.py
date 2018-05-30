@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from apps.Clientes.models import tb_cliente
 from django.shortcuts import redirect
+###########MODELOS############
+from apps.Clientes.models import tb_cliente
 
 ################Formularios##############
 from apps.Clientes.forms import ClientRegisterForm
@@ -60,7 +61,10 @@ def UpdateClient(request , id_client):
 			print('formulario con errores')
 	return render(request, 'Clientes/NewClient.html', {'Form':Form})
 
-def DetallesClient(request):
-	
-	return render(request, 'Clientes/Detalles.html')
+def DetallesClient(request, id_client):
+	client   = tb_cliente.objects.get(id = id_client)
+	contexto = {
+		'client':client
+	} 
+	return render(request, 'Clientes/Detalles.html', contexto)
 	
