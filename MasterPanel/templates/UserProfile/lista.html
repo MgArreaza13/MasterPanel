@@ -195,6 +195,7 @@
                                                     <th>Monto Acumulado</th>
                                                     <th>Tipo de Usuario</th>
                                                     <th>Fecha de Creacion</th>
+                                                    <th>Acciones</th>
                                                     
                                             </tr>
                                         </thead>
@@ -228,9 +229,9 @@
                                                 </td>
                                                 
                                                 <td style="text-align:center">
-                                                        <button type="button" value="{{formas_de_pago.id}}" onclick="EditarFormaDePago(this.value);" class="btn btn-outline btn-circle btn-sm purple">
-                                                            <i class="fa fa-edit"></i> Editar </button>
-                                                        <button type="button" value="{{formas_de_pago.id}}" onclick="EliminarFormaDePago(this.value);" class="btn btn-outline btn-circle dark btn-sm black">
+                                                        <a  href="{% url 'Usuarios:UpdateUser' usuario.id %}" class="btn btn-outline btn-circle btn-sm purple">
+                                                            <i class="fa fa-edit"></i> Editar </a>
+                                                        <button type="button" value="{{usuario.user.id}}" onclick="EliminarUser(this.value);" class="btn btn-outline btn-circle dark btn-sm black">
                                                             <i class="fa fa-trash-o"></i> Borrar </button>
                                                     </td>
                                             </tr>
@@ -243,6 +244,7 @@
                                     </table>
                                 </div>
                             </div>
+                            <a href="{% url "Usuarios:NewUser" %}"  class="btn btn-success btn-block">Nuevo</a>
                             </div></div>
                             <!-- END EXAMPLE TABLE PORTLET-->
 {% endblock Content %}
@@ -257,4 +259,5 @@
             <!-- END THEME GLOBAL SCRIPTS -->
             <!-- BEGIN PAGE LEVEL SCRIPTS -->
             <script src="{% static "assets/pages/scripts/table-datatables-managed.min.js" %}" type="text/javascript"></script>
+            <script src="{% static "assets/apps/scripts/users.js" %}" type="text/javascript"></script>
 {% endblock Scripts %}

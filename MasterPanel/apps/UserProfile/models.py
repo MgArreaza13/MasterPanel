@@ -6,7 +6,9 @@ from django.conf import settings
 
 PAGO_CHOICES = (
     ('Administrador', 'Administrador'),
-    ('Programador', 'Programador')
+    ('Programador', 'Programador'),
+    ('Otro', 'Otro'),
+
 )
 class tb_profile (models.Model):
 	user				=	models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=False, default='')

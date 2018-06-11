@@ -57,7 +57,7 @@ def UpdateClient(request , id_client):
 			cliente.save()
 			return redirect('Clientes:ListadoClientes')
 		else:
-			Form = ClientRegisterForm(equest.POST , request.FILES  ,  instance = client)
+			Form = ClientRegisterForm(request.POST , request.FILES  ,  instance = client)
 			print('formulario con errores')
 	return render(request, 'Clientes/NewClient.html', {'Form':Form})
 
